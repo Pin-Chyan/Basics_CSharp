@@ -16,8 +16,33 @@ namespace LearningCSharp
             // Calculator();
             // MadLib();
             // LuckyNumbers();
-            //SayHi("Mike", 20);
-            Console.WriteLine(Cube(5));
+            // SayHi("Mike", 20);
+            // Console.WriteLine(Cube(5));
+            // Gender();
+            // Console.WriteLine(GetMax(20, 10, 40));
+            // CalculatorM2();
+            // Console.WriteLine(GetDay(5));
+            // Countdown();
+            // CountdownM2();
+            // GuessingGame();
+            // CountdownM3();
+            // Console.WriteLine(GetPow(4, 3));
+            // NumberGrid();
+            // Division();
+
+            // Classes & Object
+            // Library();
+            // Academy();
+            // Cinema();
+            // Album();
+
+            // Static Methods & Classes
+            // e.g
+            // Console.WriteLine(Math.Sqrt(144));
+            // UsefulTools.SayHi("Mike");
+
+            // Inheritance
+            Restaurant();
 
             Console.ReadLine();
         }
@@ -173,6 +198,284 @@ namespace LearningCSharp
         {
             int result = num * num * num;
             return result;
+        }
+
+        // If statements
+        static void Gender()
+        {
+            bool isMale = false;
+            bool isTall = true;
+
+            if (isMale && isTall)
+            {
+                Console.WriteLine("You are a tall male.");
+            } else if (isMale && !isTall) {
+                Console.WriteLine("You are a short male.");
+            } else if (!isMale && isTall) {
+                Console.WriteLine("You are not a male but you are tall.");
+            } else
+            {
+                Console.WriteLine("You are not male or not tall.");
+            }
+        }
+
+        static int GetMax(int num1, int num2, int num3)
+        {
+            int result;
+
+            if (num1 >= num2 && num1 >= num3)
+            {
+                result = num1;
+            } else if (num2 >= num1 && num2 >= num3)
+            {
+                result = num2;
+            } else
+            {
+                result = num3;
+            }
+
+            return result;
+        }
+
+        static void CalculatorM2()
+        {
+            Console.Write("Enter a number: ");
+            double num1 = Convert.ToDouble(Console.ReadLine());
+
+            Console.Write("Enter Operator: ");
+            string op = Console.ReadLine();
+
+            Console.Write("Enter a number: ");
+            double num2 = Convert.ToDouble(Console.ReadLine());
+
+            if (op == "+")
+            {
+                Console.WriteLine(num1 + num2);
+            } else if (op == "-")
+            {
+                Console.WriteLine(num1 - num2);
+            } else if (op == "/")
+            {
+                Console.WriteLine(num1 / num2);
+            } else if (op == "*")
+            {
+                Console.WriteLine(num1 * num2);
+            } else
+            {
+                Console.WriteLine("Invadid Operator");
+            }
+        }
+
+        // Switches
+        static string GetDay(int dayNum)
+        {
+            string dayName;
+
+            switch (dayNum)
+            {
+                case 0:
+                    dayName = "Sunday";
+                    break;
+                case 1:
+                    dayName = "Monday";
+                    break;
+                case 2:
+                    dayName = "Tuesday";
+                    break;
+                case 3:
+                    dayName = "Wednesday";
+                    break;
+                case 4:
+                    dayName = "Thursday";
+                    break;
+                case 5:
+                    dayName = "Friday";
+                    break;
+                case 6:
+                    dayName = "Saturday";
+                    break;
+                default:
+                    dayName = "Invalid Day Number";
+                    break;
+            }
+
+            return dayName;
+        }
+
+        // Loop
+        static void Countdown()
+        {
+            int index = 1;
+            
+            while (index <= 5)
+            {
+                Console.WriteLine(index);
+                index++;
+            }
+        }
+
+        static void CountdownM2()
+        {
+            int index = 6;
+            do
+            {
+                Console.WriteLine(index);
+                index++;
+            } while (index <= 5);
+        }
+
+        static void GuessingGame()
+        {
+            string secretWord = "giraffe";
+            string guess = "";
+            int guessCount = 0;
+            int guessLimit = 3;
+            bool outOfGuesses = false;
+
+            while (guess != secretWord && !outOfGuesses)
+            {
+                if (guessCount < guessLimit)
+                {
+                    Console.Write("Enter guess: ");
+                    guess = Console.ReadLine();
+                    guessCount++;
+                } else
+                {
+                    outOfGuesses = true;
+                }
+            }
+            if (outOfGuesses)
+            {
+                Console.WriteLine("You Lose!");
+            } else
+            {
+                Console.WriteLine("You Win!");
+            }
+        }
+
+        // for loop
+        static void CountdownM3()
+        {
+            int[] luckyNumbers = { 4, 8, 15, 16, 23, 42 };
+
+            for(int i = 0; i < luckyNumbers.Length; i++)
+            {
+                Console.WriteLine(luckyNumbers[i]);
+            }
+        }
+
+        static int GetPow(int baseNum, int powNum)
+        {
+            int result = 1;
+
+            for (int i = 0; i < powNum; i++)
+            {
+                result = result * baseNum;
+            }
+            // Console.WriteLine(Math.Pow(baseNum, powNum));
+
+            return result;
+        }
+
+        // 2d array
+        static void NumberGrid()
+        {
+            int[,] numberGrid =
+            {
+                {1, 2},
+                {3, 4},
+                {5, 6}
+            };
+
+            Console.WriteLine(numberGrid[1, 1]);
+        }
+
+        // exception handling
+        static void Division()
+        {
+            try
+            {
+                Console.Write("Enter a number: ");
+                int num1 = Convert.ToInt32(Console.ReadLine());
+                Console.Write("Enter another number: ");
+                int num2 = Convert.ToInt32(Console.ReadLine());
+
+                Console.Write(num1 / num2);
+            }
+            catch (DivideByZeroException e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            catch (FormatException e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            finally
+            {
+                Console.WriteLine("Division Has Ended.");
+            }
+        }
+
+        static void Library()
+        {
+            Book book1 = new Book("Harry Potter", "JK Rowling", 400);
+            
+            Book book2 = new Book("Lord Of The Rings", "Tolkein", 700);
+
+            Book book3 = new Book();
+
+            book2.title = "Hobbit";
+
+            Console.WriteLine(book2.title);
+        }
+
+        static void Academy()
+        {
+            Student student1 = new Student("Jim", "Business", 2.8);
+            Student student2 = new Student("Pam", "Art", 3.6);
+
+            Console.WriteLine(student1.HasHonors());
+            Console.WriteLine(student2.HasHonors());
+        }
+
+        static void Cinema()
+        {
+            Movie avengers = new Movie("The Avengers", "Joss Whedon", "PG-13");
+            Movie shrek = new Movie("Shrek", "Adam Adamson", "PG");
+
+            shrek.Rating = "R";
+
+            Console.WriteLine(avengers.Rating);
+            Console.WriteLine(shrek.Rating);
+            // Ratings Only
+            // G, PG, PG-13, R, NR
+        }
+        
+        static void Album()
+        {
+            Song holiday = new Song("Holiday", "Green Day", 200);
+            Console.WriteLine(Song.songCount);
+            Song kashmir = new Song("Kashmir", "Led Zeppelin", 150);
+            Console.WriteLine(Song.songCount);
+            // Console.WriteLine(holiday.getSongCount());
+
+            // Console.WriteLine(holiday.title);
+            // Console.WriteLine(kashmir.title);
+        }
+
+        static void Restaurant()
+        {
+            Chef chef = new Chef();
+            chef.MakeChicken();
+            chef.MakeSpecailDish();
+
+            ItalianChef italianChef = new ItalianChef();
+            italianChef.MakePasta();
+            italianChef.MakeSpecailDish();
         }
     }
 }
