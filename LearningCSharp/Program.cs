@@ -42,7 +42,18 @@ namespace LearningCSharp
             // UsefulTools.SayHi("Mike");
 
             // Inheritance
-            Restaurant();
+            // Restaurant();
+
+            // Stacks
+            // StackHi();
+            // StackCount();
+
+            // Queue
+            // QueueHi();
+            // QueueCount();
+
+            // Linked List
+            LinkedListRundown();
 
             Console.ReadLine();
         }
@@ -476,6 +487,36 @@ namespace LearningCSharp
             ItalianChef italianChef = new ItalianChef();
             italianChef.MakePasta();
             italianChef.MakeSpecailDish();
+        }
+
+        static void StackHi()
+        {
+            SimpleStack myStack = new SimpleStack();
+            myStack.stackSimple();
+        }
+
+        static void StackCount()
+        {
+            GenericStack myStack = new GenericStack();
+            myStack.stackGeneric();
+        }
+
+        static void QueueHi()
+        {
+            SimpleQueue myQ = new SimpleQueue();
+            myQ.queueSimple();
+        }
+
+        static void QueueCount()
+        {
+            GenericQueue myQ = new GenericQueue();
+            myQ.queueGeneric();
+        }
+
+        static void LinkedListRundown()
+        {
+            GenericLinkedList myLinkedList = new GenericLinkedList();
+            myLinkedList.linkedListGeneric();
         }
     }
 }
