@@ -11,7 +11,7 @@ namespace LearningCSharp
         public void linkedListGeneric()
         {
             // Create the link list.
-            string[] words = { "the", "fox", "jump", "over", "the", "dog" };
+            string[] words = { "the", "fox", "jumps", "over", "the", "dog" };
             LinkedList<string> sentence = new LinkedList<string>(words);
             Display(sentence, "The linked list values:");
             Console.WriteLine("sentence.Contains(\"jumps\") = {0}", sentence.Contains("jumps"));
@@ -53,7 +53,7 @@ namespace LearningCSharp
 
             // Add 'quick' and 'brown' before 'fox':
             sentence.AddBefore(current, "quick");
-            sentence.AddBefore(current, "quick");
+            sentence.AddBefore(current, "brown");
             IndicateNode(current, "Test 8: Add 'quick' and 'brown' before 'fox':");
 
             // Keep a reference to the current node, 'fox',
@@ -61,7 +61,9 @@ namespace LearningCSharp
             mark1 = current;
             LinkedListNode<string> mark2 = current.Previous;
             current = sentence.Find("dog");
-            IndicateNode(current, "Test 9: Throw exception by adding node (fox) already in the list:");
+            IndicateNode(current, "Test 9: Indicate the 'dog' node:");
+
+            // current as of current position of the linkedlist.
 
             // The AddBefore method throws an InvalidOperationException
             // if you try to add a node that already belong to a list

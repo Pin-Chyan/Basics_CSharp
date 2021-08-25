@@ -53,7 +53,13 @@ namespace LearningCSharp
             // QueueCount();
 
             // Linked List
-            LinkedListRundown();
+            // LinkedListRundown();
+
+            // Collection/Dictionary
+            // DictionaryRundown();
+
+            // Binary Search
+            SearchBinary();
 
             Console.ReadLine();
         }
@@ -95,7 +101,7 @@ namespace LearningCSharp
             bool isMale = true;
 
             Console.WriteLine("phrase : " + phrase);
-            Console.WriteLine("grade : " +  grade);
+            Console.WriteLine("grade : " + grade);
             Console.WriteLine("age : " + age);
             Console.WriteLine("gpa : " + gpa);
             Console.WriteLine("isMale :" + isMale);
@@ -157,7 +163,7 @@ namespace LearningCSharp
             double num1 = Convert.ToDouble(Console.ReadLine());
             Console.WriteLine("Enter another number: ");
             double num2 = Convert.ToDouble(Console.ReadLine());
-            Console.WriteLine(num1  + num2);
+            Console.WriteLine(num1 + num2);
         }
 
         static void MadLib()
@@ -181,7 +187,7 @@ namespace LearningCSharp
         static void LuckyNumbers()
         {
             // array
-            int[] luckyNumbers = {4, 8, 15, 16, 23, 42 };
+            int[] luckyNumbers = { 4, 8, 15, 16, 23, 42 };
             string[] friends = new string[3];
             friends[0] = "Jim";
             friends[1] = "Kelly";
@@ -317,7 +323,7 @@ namespace LearningCSharp
         static void Countdown()
         {
             int index = 1;
-            
+
             while (index <= 5)
             {
                 Console.WriteLine(index);
@@ -369,7 +375,7 @@ namespace LearningCSharp
         {
             int[] luckyNumbers = { 4, 8, 15, 16, 23, 42 };
 
-            for(int i = 0; i < luckyNumbers.Length; i++)
+            for (int i = 0; i < luckyNumbers.Length; i++)
             {
                 Console.WriteLine(luckyNumbers[i]);
             }
@@ -434,7 +440,7 @@ namespace LearningCSharp
         static void Library()
         {
             Book book1 = new Book("Harry Potter", "JK Rowling", 400);
-            
+
             Book book2 = new Book("Lord Of The Rings", "Tolkein", 700);
 
             Book book3 = new Book();
@@ -465,7 +471,7 @@ namespace LearningCSharp
             // Ratings Only
             // G, PG, PG-13, R, NR
         }
-        
+
         static void Album()
         {
             Song holiday = new Song("Holiday", "Green Day", 200);
@@ -518,5 +524,18 @@ namespace LearningCSharp
             GenericLinkedList myLinkedList = new GenericLinkedList();
             myLinkedList.linkedListGeneric();
         }
+
+        static void DictionaryRundown()
+        {
+            GenericCollection myCollection = new GenericCollection();
+            myCollection.DictionaryGeneric();
+        }
+
+        static void SearchBinary()
+        {
+            BinarySearch mySearch = new BinarySearch();
+            mySearch.binarySearch();
+        }
+
     }
 }
